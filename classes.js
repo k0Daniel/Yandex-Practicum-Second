@@ -25,17 +25,17 @@ class Mage extends Hero {
 		this.mana = mana;
 	}
 	healHero(hero) {
-    if (this.mana > gameParameters.MIN_STAT) {
-      const healAmount = this.level * 10;
+		if (this.mana > gameParameters.MIN_STAT) {
+			const healAmount = this.level * 10;
 
-      hero.healthPoints += healAmount;
-      console.log(this.name + " продлевает танец " + hero.name + " на " + healAmount + " единиц.");
-    
-      this.mana -= healAmount * (10 / this.level) - this.level;
-    } else {
-    alert("Недостаточно маны...");
-  }
-}
+			hero.healthPoints += healAmount;
+			console.log(this.name + ' продлевает танец ' + hero.name + ' на ' + healAmount + ' единиц.');
+
+			this.mana -= healAmount * (10 / this.level) - this.level;
+		} else {
+			alert('Недостаточно маны...');
+		}
+	}
 
 	displayHero() {
 		super.displayHero();
@@ -56,7 +56,7 @@ class Knight extends Hero {
 	}
 	gainAgility(hero) {
 		if (this.energy > gameParameters.MIN_STAT) {
-			const gainAmount = (this.level * this.energy) / 30;
+			const gainAmount = Math.round((this.level * this.energy) / 30);
 
 			if (hero.stats.agi + gainAmount < gameParameters.MAX_STAT) {
 				hero.stats.agi += gainAmount;
