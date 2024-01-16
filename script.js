@@ -130,8 +130,10 @@ function arena(firstHero, secondHero) {
 
 	if (fistHeroSum > secondHeroSum) {
 		winner = firstHero;
+		document.getElementById('hero1').classList.add('winner-outline');
 	} else if (fistHeroSum < secondHeroSum) {
 		winner = secondHero;
+		document.getElementById('hero2').classList.add('winner-outline');
 	}
 
 	if (winner) {
@@ -142,6 +144,7 @@ function arena(firstHero, secondHero) {
 		alert('В танцевальном баттле победила дружба!');
 	}
 }
+
 doSkillButton.onclick = () => {
 	if (playerHero) {
 		if (playerHero.constructor.name === 'Mage') {
@@ -157,6 +160,8 @@ doSkillButton.onclick = () => {
 	displayPlayerHero(playerHero);
 };
 startBattleButton.onclick = () => {
+	document.getElementById('hero2').classList.remove('winner-outline');
+	document.getElementById('hero1').classList.remove('winner-outline');
 	arena(playerHero, enemyHero);
 };
 
