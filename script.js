@@ -170,7 +170,7 @@ function random() {
 	return Math.round(Math.random() * max);
 }
 
-randomBtn.onclick = function () {
+randomBtn.onclick = function (event) {
 	const randomLvl = document.getElementById('level');
 	const randomStrength = document.getElementById('strength');
 	const randomIntelligence = document.getElementById('intelligence');
